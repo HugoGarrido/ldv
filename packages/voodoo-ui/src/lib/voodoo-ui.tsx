@@ -1,11 +1,14 @@
+import { NativeBaseProvider, Box, Button } from 'native-base';
+
 /* eslint-disable-next-line */
 export interface VoodooUiProps {}
 
 export function VoodooUi(props: VoodooUiProps) {
   return (
-    <div>
-      <h1>Welcome to VoodooUi!</h1>
-    </div>
+    <NativeBaseProvider>
+      <Box>Welcome to VoodooUi!</Box>
+      <Button>lol</Button>
+    </NativeBaseProvider>
   );
 }
 

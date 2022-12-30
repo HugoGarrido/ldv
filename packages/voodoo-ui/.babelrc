@@ -1,6 +1,7 @@
 {
-  "presets": [
-    "@nrwl/next/babel"
-  ],
-  "plugins": []
+  "presets": ["@nrwl/next/babel"],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    "@babel/plugin-transform-modules-commonjs"
+  ]
 }
