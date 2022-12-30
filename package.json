@@ -4,13 +4,16 @@
   "license": "MIT",
   "scripts": {
     "start:portfolio": "nx serve portfolio",
-    "start:voodoo-ui:storybook": "nx run voodoo-ui:storybook"
+    "start:voodoo-ui:storybook:lol": "TAMAGUI_TARGET=web nx run voodoo-ui:storybook",
+    "start:voodoo-ui:storybook": "TAMAGUI_TARGET=web nx run voodoo-ui:storybook"
   },
   "private": true,
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-modules-commonjs": "^7.20.11",
     "@storybook/addon-react-native-web": "^0.0.19",
+    "@tamagui/shorthands": "^1.0.1",
+    "@tamagui/theme-base": "^1.0.1",
     "core-js": "^3.6.5",
     "native-base": "^3.4.25",
     "next": "13.0.0",
@@ -22,6 +25,7 @@
     "react-native-web": "0.17.1",
     "regenerator-runtime": "0.13.7",
     "styled-components": "5.3.6",
+    "tamagui": "^1.0.1",
     "tslib": "^2.3.0"
   },
   "devDependencies": {

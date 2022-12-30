@@ -1,5 +1,9 @@
 import type { StorybookConfig } from '@storybook/core-common';
 
+// interface TempStorybookConfig extends StorybookConfig {
+//   env: (config: Record<string, any>) => Record<string, any>;
+// }
+
 export const rootMain: StorybookConfig = {
   stories: [],
   addons: ['@storybook/addon-essentials'],
@@ -8,5 +12,12 @@ export const rootMain: StorybookConfig = {
 
   //   // Return the altered config
   //   return config;
+  // },
+  // env: (config: any) => {
+  //   console.log({ configMain: config });
+  //   return {
+  //     ...config,
+  //     // TAMAGUI_TARGET: 'web',
+  //   };
   // },
 };

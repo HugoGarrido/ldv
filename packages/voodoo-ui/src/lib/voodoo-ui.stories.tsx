@@ -5,7 +5,7 @@ export default {
   title: 'voodoo-ui/components/test',
   component: VoodooUI,
 };
-
+console.log({ a: process.env });
 export const VoodooUIStory: ComponentStory<typeof VoodooUI> = () => (
   <VoodooUI />
 );

@@ -1,3 +1,4 @@
+import { VoodooUi } from '@ldv/voodoo-ui';
 import styled from 'styled-components';
 
 const StyledPage = styled.div`
@@ -13,6 +14,7 @@ export function Index() {
    */
   return (
     <StyledPage>
+      <VoodooUi />
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
