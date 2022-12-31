@@ -1,11 +1,18 @@
-/* eslint-disable-next-line */
-export interface VoodooUiProps {}
+import {
+  NativeBaseProvider,
+  Box,
+  Button,
+  NativeBaseProviderProps,
+} from 'native-base';
 
-export function VoodooUi(props: VoodooUiProps) {
+export type VoodooUiProps = NativeBaseProviderProps;
+
+export function VoodooUi({ isSSR, ...props }: VoodooUiProps) {
   return (
-    <div>
-      <h1>Welcome to VoodooUi!</h1>
-    </div>
+    <NativeBaseProvider isSSR={isSSR}>
+      <Box>Welcome to VoodooUi!</Box>
+      <Button>testing</Button>
+    </NativeBaseProvider>
   );
 }
 
