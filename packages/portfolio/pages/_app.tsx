@@ -1,3 +1,4 @@
+import { VoodooUIProvider } from '@ldv/voodoo-ui';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
@@ -8,9 +9,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to portfolio!</title>
       </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
+      <VoodooUIProvider isSSR>
+        <main className="app">
+          <Component {...pageProps} />
+        </main>
+      </VoodooUIProvider>
     </>
   );
 }

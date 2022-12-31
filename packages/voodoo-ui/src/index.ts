@@ -1,2 +1,3 @@
 export * from './lib/voodoo-ui';
-export { Box } from 'native-base';
+export type { VoodooUIProviderProps } from './lib/VoodooUIProvider/VoodooUIProvider';
+export { VoodooUIProvider } from './lib/VoodooUIProvider/VoodooUIProvider';
