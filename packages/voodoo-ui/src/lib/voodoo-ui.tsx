@@ -1,13 +1,17 @@
-import { NativeBaseProvider, Box, Button } from 'native-base';
+import {
+  NativeBaseProvider,
+  Box,
+  Button,
+  NativeBaseProviderProps,
+} from 'native-base';
 
-/* eslint-disable-next-line */
-export interface VoodooUiProps {}
+export type VoodooUiProps = NativeBaseProviderProps;
 
-export function VoodooUi(props: VoodooUiProps) {
+export function VoodooUi({ isSSR, ...props }: VoodooUiProps) {
   return (
-    <NativeBaseProvider>
+    <NativeBaseProvider isSSR={isSSR}>
       <Box>Welcome to VoodooUi!</Box>
-      <Button>lol</Button>
+      <Button>testing</Button>
     </NativeBaseProvider>
   );
 }
