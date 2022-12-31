@@ -1980,14 +1980,6 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@native-base/next-adapter@^2.3.0":
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/@native-base/next-adapter/-/next-adapter-2.3.0.tgz#7435f51ddbb7890326b93c4aa7994a08ded3da0b"
-  integrity sha512-EsWeeUebQV1vn+nkjZu0o+E/TdhrKSI+G0tYlYvOPYH9uaiV4ObEpgkWQCjjOZsgBRTJFA8jwSu/f4A0FX4IGA==
-  dependencies:
-    native-base "^3.4.19"
-    react-native-vector-icons-for-web "^0.1.7"
-
 "@next/env@13.0.0":
   version "13.0.0"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-13.0.0.tgz#38527956680693c90b4522ab4ab9a2fbe3a17f67"
@@ -13944,7 +13936,7 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-base@^3.4.19, native-base@^3.4.25:
+native-base@^3.4.25:
   version "3.4.25"
   resolved "https://registry.yarnpkg.com/native-base/-/native-base-3.4.25.tgz#0b5871855be4c48ef72768e50db002d6a0e1ad23"
   integrity sha512-MOeqNji6eAXge9uWsKgfyna8kakdoQuynxoDlVgzTrXXT0o/UrmIUAz+xNPM7rjYHd0MM+UdohPilV1/Z5pB9Q==
@@ -16161,11 +16153,6 @@ react-native-svg@12.1.1:
   dependencies:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"
-
-react-native-vector-icons-for-web@^0.1.7:
-  version "0.1.7"
-  resolved "https://registry.yarnpkg.com/react-native-vector-icons-for-web/-/react-native-vector-icons-for-web-0.1.7.tgz#6e007f8a7aac4f97f31adc9d64d625bd7a40e886"
-  integrity sha512-L5hIEoBo5J3+rWVLn5dd/rAE1l5Up47v2VZ5GqwC/2fuEcSmxE3OFZKhgXaqjgC2kof/jhCVhpzXFdndBGSTEw==
 
 react-native-web@0.17.1:
   version "0.17.1"
