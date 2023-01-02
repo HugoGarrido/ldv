@@ -1,5 +1,5 @@
-import { colors, typographyColors } from './colors';
-import { breakpoints } from './breakpoints';
+import { colors, typographyColors } from './voodooUI/colors';
+import { breakpoints } from './voodooUI/breakpoints';
 
 export const theme = {
   breakpoints,

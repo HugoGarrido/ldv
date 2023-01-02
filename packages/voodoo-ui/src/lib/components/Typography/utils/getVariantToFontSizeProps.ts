@@ -1,4 +1,4 @@
-import { VoodooUIBreakpointName } from '../../../theme/breakpoints';
+import { VoodooUIBreakpointName } from '../../../theme/voodooUI/breakpoints';
 import {
   VoodooUIResponsiveRecordValue,
   VoodooUIResponsiveValue,

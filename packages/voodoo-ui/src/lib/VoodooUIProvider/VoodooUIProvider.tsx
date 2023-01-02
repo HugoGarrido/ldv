@@ -1,5 +1,5 @@
 import { NativeBaseProvider, NativeBaseProviderProps } from 'native-base';
-import { extendedNativeBaseTheme } from '../theme/extendedNativeBaseTheme';
+import { extendedNativeBaseTheme } from '../theme/voodooUINativeBase/extendedNativeBaseTheme';
 
 export interface VoodooUIProviderProps extends NativeBaseProviderProps {}
 

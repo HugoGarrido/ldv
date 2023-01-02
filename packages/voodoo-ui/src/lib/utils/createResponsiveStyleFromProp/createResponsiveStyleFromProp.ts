@@ -1,4 +1,4 @@
-import type { VoodooUIBreakpointName } from '../../theme/breakpoints';
+import type { VoodooUIBreakpointName } from '../../theme/voodooUI/breakpoints';
 
 export type VoodooUIResponsiveRecordValue<T> = {
   [key in VoodooUIBreakpointName]?: T;

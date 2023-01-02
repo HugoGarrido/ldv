@@ -19,7 +19,7 @@ import type {
   NativeBaseAcceptedShadowProps,
   NativeBaseAcceptedSpaceProps,
 } from '../nativeBaseSupportedProps';
-import { VoodooUIBreakpointName } from './../../theme/breakpoints';
+import { VoodooUIBreakpointName } from '../../theme/voodooUI/breakpoints';
 
 type NativeBaseAcceptedStackProps = Extract<
   keyof InterfaceStackProps,
