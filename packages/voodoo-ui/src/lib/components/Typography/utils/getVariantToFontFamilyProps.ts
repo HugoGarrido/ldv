@@ -6,8 +6,6 @@ import {
 import { TypographyVariant } from '../types';
 
 function typographyVariantToFontFamily(variant: TypographyVariant): string {
-  console.log({ variant });
-
   if (variant.startsWith('heading')) {
     return 'Sora';
   }

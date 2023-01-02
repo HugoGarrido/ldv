@@ -4,6 +4,7 @@ import { VoodooUIResponsiveValue } from '../../utils/createResponsiveStyleFromPr
 import { TypographyColor, TypographyVariant } from './types';
 import { getColorToColoProps } from './utils/getColorToColorProps';
 import { getVariantToFontFamilyProps } from './utils/getVariantToFontFamilyProps';
+import { getVariantToFontFamilySize } from './utils/getVariantToFontSizeProps';
 
 interface TypographyProps {
   children: ReactNode;
@@ -14,9 +15,14 @@ interface TypographyProps {
 export function Typography({ color, variant, children }: TypographyProps) {
   const currentFontFamily = getVariantToFontFamilyProps(variant);
   const currentColor = getColorToColoProps(color);
+  const currentFontSize = getVariantToFontFamilySize(variant);
 
   return (
-    <Text fontFamily={currentFontFamily} color={currentColor}>
+    <Text
+      fontFamily={currentFontFamily}
+      color={currentColor}
+      fontSize={currentFontSize}
+    >
       {children}
     </Text>
   );

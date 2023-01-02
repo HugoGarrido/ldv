@@ -4,10 +4,12 @@ import { theme } from '../theme/theme';
 export const extendedNativeBaseTheme = extendTheme({
   colors: {
     voodoo: {
+      colors: {
+        ...theme.colors,
+      },
       typography: {
         colors: {
-          body: '#00ff00',
-          primary: '#ff0000',
+          ...theme.typographyColors,
         },
       },
     },
