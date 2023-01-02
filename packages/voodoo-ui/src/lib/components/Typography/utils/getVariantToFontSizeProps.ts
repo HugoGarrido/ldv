@@ -54,23 +54,44 @@ const heading6ResponsiveProps = {
   wide: '32px',
 };
 
+const bodyFontSize = '16px';
+const bodySmallFontSize = '14px';
+
 function typographyVariantToFontSize(
   variant: TypographyVariant,
   breakpointName?: VoodooUIBreakpointName
-): string {
-  if (variant === 'body-small') return '14px';
-
-  // Only heading sizes differes with breakpont
-  if (breakpointName) {
-    if (variant === 'heading1') return heading1ResponsiveProps[breakpointName];
-    if (variant === 'heading2') return heading2ResponsiveProps[breakpointName];
-    if (variant === 'heading3') return heading3ResponsiveProps[breakpointName];
-    if (variant === 'heading4') return heading4ResponsiveProps[breakpointName];
-    if (variant === 'heading5') return heading5ResponsiveProps[breakpointName];
-    if (variant === 'heading6') return heading6ResponsiveProps[breakpointName];
+): string | VoodooUIResponsiveValue<string> {
+  switch (variant) {
+    case 'heading1':
+      return breakpointName
+        ? heading1ResponsiveProps[breakpointName]
+        : heading1ResponsiveProps;
+    case 'heading2':
+      return breakpointName
+        ? heading2ResponsiveProps[breakpointName]
+        : heading2ResponsiveProps;
+    case 'heading3':
+      return breakpointName
+        ? heading3ResponsiveProps[breakpointName]
+        : heading3ResponsiveProps;
+    case 'heading4':
+      return breakpointName
+        ? heading4ResponsiveProps[breakpointName]
+        : heading4ResponsiveProps;
+    case 'heading5':
+      return breakpointName
+        ? heading5ResponsiveProps[breakpointName]
+        : heading5ResponsiveProps;
+    case 'heading6':
+      return breakpointName
+        ? heading6ResponsiveProps[breakpointName]
+        : heading6ResponsiveProps;
+    case 'body-small':
+      return bodySmallFontSize;
+    case 'body':
+    default:
+      return bodyFontSize;
   }
-
-  return '16px';
 }
 
 export function getVariantToFontFamilySize(
@@ -92,7 +113,7 @@ export function getVariantToFontFamilySize(
     responsiveValue[breakpointName] = typographyVariantToFontSize(
       variant[breakpointName] || 'body',
       breakpointName
-    );
+    ) as string;
   });
 
   return responsiveValue;
