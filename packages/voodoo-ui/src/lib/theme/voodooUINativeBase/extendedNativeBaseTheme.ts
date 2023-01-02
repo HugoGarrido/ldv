@@ -45,21 +45,10 @@ export const extendedNativeBaseTheme = extendTheme({
     },
   },
   fonts: {
-    heading: 'Sora',
-    body: 'Roboto',
-    mono: 'Roboto',
+    ...theme.typography.fonts,
   },
   fontConfig: {
-    Sora: {
-      400: {
-        normal: 'Sora',
-      },
-    },
-    Roboto: {
-      400: {
-        normal: 'Roboto',
-      },
-    },
+    ...theme.typography.fontConfig,
   },
   radii: {
     ...resetNativeBaseRadii,

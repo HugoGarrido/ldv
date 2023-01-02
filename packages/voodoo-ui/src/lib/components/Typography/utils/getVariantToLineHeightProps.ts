@@ -6,7 +6,7 @@ import {
 import { TypographyVariant } from '../types';
 import { theme } from '../../../theme/theme';
 
-function typographyVariantToFontSize(
+function typographyVariantToLineHeight(
   variant: TypographyVariant,
   breakpointName?: VoodooUIBreakpointName
 ): string | VoodooUIResponsiveValue<string> {
@@ -15,53 +15,54 @@ function typographyVariantToFontSize(
   switch (variant) {
     case 'heading1':
       return breakpointName
-        ? variants.heading1.fontSize[breakpointName]
-        : variants.heading1.fontSize;
+        ? variants.heading1.lineHeight[breakpointName]
+        : variants.heading1.lineHeight;
     case 'heading2':
       return breakpointName
-        ? variants.heading2.fontSize[breakpointName]
-        : variants.heading2.fontSize;
+        ? variants.heading2.lineHeight[breakpointName]
+        : variants.heading2.lineHeight;
     case 'heading3':
       return breakpointName
-        ? variants.heading3.fontSize[breakpointName]
-        : variants.heading3.fontSize;
+        ? variants.heading3.lineHeight[breakpointName]
+        : variants.heading3.lineHeight;
     case 'heading4':
       return breakpointName
-        ? variants.heading4.fontSize[breakpointName]
-        : variants.heading4.fontSize;
+        ? variants.heading4.lineHeight[breakpointName]
+        : variants.heading4.lineHeight;
     case 'heading5':
       return breakpointName
-        ? variants.heading5.fontSize[breakpointName]
-        : variants.heading5.fontSize;
+        ? variants.heading5.lineHeight[breakpointName]
+        : variants.heading5.lineHeight;
     case 'heading6':
       return breakpointName
-        ? variants.heading6.fontSize[breakpointName]
-        : variants.heading6.fontSize;
+        ? variants.heading6.lineHeight[breakpointName]
+        : variants.heading6.lineHeight;
     case 'body-small':
-      return variants.bodySmall.fontSize;
+      return variants.bodySmall.lineHeight;
     case 'body':
     default:
-      return variants.body.fontSize;
+      return variants.body.lineHeight;
   }
 }
 
-export function getVariantToFontFamilySizeProps(
+export function getVariantToFontLineHeightProps(
   variant: VoodooUIResponsiveValue<TypographyVariant> | undefined
 ): VoodooUIResponsiveValue<string> {
   if (!variant) {
-    return typographyVariantToFontSize('body');
+    return typographyVariantToLineHeight('body');
   }
 
-  if (typeof variant === 'string') return typographyVariantToFontSize(variant);
+  if (typeof variant === 'string')
+    return typographyVariantToLineHeight(variant);
 
   const keys = Object.keys(variant) as VoodooUIBreakpointName[];
 
-  if (keys.length === 0) return typographyVariantToFontSize('body');
+  if (keys.length === 0) return typographyVariantToLineHeight('body');
 
   const responsiveValue = {} as VoodooUIResponsiveRecordValue<string>;
 
   keys.forEach((breakpointName) => {
-    responsiveValue[breakpointName] = typographyVariantToFontSize(
+    responsiveValue[breakpointName] = typographyVariantToLineHeight(
       variant[breakpointName] || 'body',
       breakpointName
     ) as string;

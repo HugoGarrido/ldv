@@ -4,7 +4,8 @@ import { VoodooUIResponsiveValue } from '../../utils/createResponsiveStyleFromPr
 import { TypographyColor, TypographyVariant } from './types';
 import { getColorToColoProps } from './utils/getColorToColorProps';
 import { getVariantToFontFamilyProps } from './utils/getVariantToFontFamilyProps';
-import { getVariantToFontFamilySize } from './utils/getVariantToFontSizeProps';
+import { getVariantToFontFamilySizeProps } from './utils/getVariantToFontSizeProps';
+import { getVariantToFontLineHeightProps } from './utils/getVariantToLineHeightProps';
 
 interface AuthorizedNativeBaseTextProps
   extends Pick<
@@ -32,7 +33,8 @@ export function Typography({
 }: TypographyProps) {
   const currentFontFamily = getVariantToFontFamilyProps(variant);
   const currentColor = getColorToColoProps(color);
-  const currentFontSize = getVariantToFontFamilySize(variant);
+  const currentFontSize = getVariantToFontFamilySizeProps(variant);
+  const currentLineHeight = getVariantToFontLineHeightProps(variant);
 
   return (
     <Text
@@ -40,6 +42,7 @@ export function Typography({
       fontFamily={currentFontFamily}
       color={currentColor}
       fontSize={currentFontSize}
+      lineHeight={currentLineHeight}
     >
       {children}
     </Text>
