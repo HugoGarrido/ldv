@@ -1,5 +1,6 @@
 import { extendTheme } from 'native-base';
 import { theme } from '../theme';
+import { button } from './button';
 import { spaces } from './spaces';
 
 // reset native-base to be able to set size / space as a number
@@ -35,6 +36,9 @@ export const extendedNativeBaseTheme = extendTheme({
   borderWidths: {
     ...resetNativeBaseSpaces,
     ...spaces,
+    voodoo: {
+      button: button.borderWidths,
+    },
   },
   colors: {
     voodoo: {
@@ -42,6 +46,7 @@ export const extendedNativeBaseTheme = extendTheme({
         ...theme.colors,
         palettes: { voodooUI: theme.palette },
       },
+      button: button.colors,
       typography: {
         colors: {
           ...theme.typography.colors,
@@ -58,12 +63,21 @@ export const extendedNativeBaseTheme = extendTheme({
   radii: {
     ...resetNativeBaseRadii,
     ...spaces,
+    voodoo: {
+      button: button.radii,
+    },
   },
-  size: {
+  sizes: {
     ...spaces,
+    voodoo: {
+      button: button.sizes,
+    },
   },
   space: {
     ...resetNativeBaseSpaces,
     ...spaces,
+    voodoo: {
+      button: button.space,
+    },
   },
 });
