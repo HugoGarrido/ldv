@@ -75,12 +75,12 @@ const buttonVariants: ButtonVariantsTheme = {
       pressed: {
         color: colors.white[900],
         borderColor: 'transparent',
-        backgroundColor: colors.primary[500],
+        backgroundColor: colors.primary[400],
       },
       hovered: {
         color: colors.white[900],
-        borderColor: 'transparent',
-        backgroundColor: colors.primary[500],
+        borderColor: colors.primary[300],
+        backgroundColor: colors.primary[400],
       },
       focused: {
         color: colors.white[900],
@@ -88,24 +88,24 @@ const buttonVariants: ButtonVariantsTheme = {
         backgroundColor: 'inherit',
       },
     },
-    // TODO
     outlined: {
-      color: colors.primary['900'],
-      borderColor: colors.primary['900'],
-      backgroundColor: colors.primary[500],
+      color: colors.primary[500],
+      borderColor: colors.primary[500],
+      backgroundColor: 'transparent',
       pressed: {
-        color: colors.white[900],
-        borderColor: 'transparent',
-        backgroundColor: colors.primary[500],
+        color: colors.white[400],
+        borderColor: colors.primary[400],
+        backgroundColor: 'transparent',
       },
       hovered: {
-        color: colors.white[900],
-        borderColor: 'transparent',
-        backgroundColor: colors.primary[500],
+        color: colors.primary[400],
+        borderColor: colors.primary[400],
+        backgroundColor: 'transparent',
       },
+      // TODO
       focused: {
-        color: colors.white[900],
-        borderColor: colors.primary[300],
+        color: colors.primary[800],
+        borderColor: colors.primary[800],
         backgroundColor: 'inherit',
       },
     },

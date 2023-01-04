@@ -33,6 +33,7 @@ export const button = {
   colors: {
     primary: {
       solid: makeButtonColorForNBForVariant('solid', 'primary'),
+      outlined: makeButtonColorForNBForVariant('outlined', 'primary'),
     },
   },
   sizes: {

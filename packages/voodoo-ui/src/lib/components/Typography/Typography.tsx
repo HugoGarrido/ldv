@@ -20,12 +20,41 @@ interface AuthorizedNativeBaseTextProps
     | 'position'
   > {}
 
-interface TypographyProps extends AuthorizedNativeBaseTextProps {
+interface TypographyBuilderProps extends AuthorizedNativeBaseTextProps {
   children: ReactNode;
-  color?: VoodooUIResponsiveValue<TypographyColor>;
+  color?: ITextProps['color'];
+  lineHeight?: ITextProps['lineHeight'];
+  fontFamily?: ITextProps['fontFamily'];
+  fontSize?: ITextProps['fontSize'];
   variant?: VoodooUIResponsiveValue<TypographyVariant>;
   accessibilityRole?: ViewProps['accessibilityRole'];
   accessibilityLevel?: number;
+}
+
+export function TypographyBuilder({
+  variant,
+  fontSize,
+  fontFamily,
+  lineHeight,
+  ...props
+}: TypographyBuilderProps) {
+  const currentFontFamily = getVariantToFontFamilyProps(variant);
+  const currentFontSize = getVariantToFontFamilySizeProps(variant);
+  const currentLineHeight = getVariantToFontLineHeightProps(variant);
+
+  return (
+    <Text
+      fontFamily={fontFamily || currentFontFamily}
+      fontSize={fontSize || currentFontSize}
+      lineHeight={lineHeight || currentLineHeight}
+      {...props}
+    />
+  );
+}
+
+interface TypographyProps extends TypographyBuilderProps {
+  color?: VoodooUIResponsiveValue<TypographyColor>;
+  variant?: VoodooUIResponsiveValue<TypographyVariant>;
 }
 
 function TypographyText({
@@ -40,7 +69,7 @@ function TypographyText({
   const currentLineHeight = getVariantToFontLineHeightProps(variant);
 
   return (
-    <Text
+    <TypographyBuilder
       {...props}
       fontFamily={currentFontFamily}
       color={currentColor}
@@ -48,7 +77,7 @@ function TypographyText({
       lineHeight={currentLineHeight}
     >
       {children}
-    </Text>
+    </TypographyBuilder>
   );
 }
 

@@ -1,26 +1,30 @@
 import { ReactElement } from 'react';
 import { View } from '../../native-base/primitives';
 import { theme } from '../../theme/theme';
-import { ButtonColor, ButtonVariant } from './Button';
+import { ButtonVariant } from './Button';
 
 interface BorderWhenInteractedProps {
-  color: ButtonColor;
   variant: ButtonVariant;
   isHovered?: boolean;
   isFocused?: boolean;
+  borderColor: string;
 }
 
 export function BorderWhenInteracted({
-  color,
   variant,
   isHovered,
   isFocused,
+  borderColor,
 }: BorderWhenInteractedProps): ReactElement {
+  const shouldDisplayBorder =
+    variant === 'outlined' ? true : isHovered || isFocused;
+
   return (
     <View
-      opacity={isHovered || isFocused ? 1 : 0}
+      opacity={shouldDisplayBorder ? 1 : 0}
       borderWidth="voodoo.button.borderWidth"
-      borderColor={`voodoo.button.${color}.${variant}.focused.borderColor`}
+      // borderColor={`voodoo.button.${color}.${variant}.focused.borderColor`}
+      borderColor={borderColor}
       position="absolute"
       top={`-${theme.button.borderWidth}px`}
       left={`-${theme.button.borderWidth}px`}
