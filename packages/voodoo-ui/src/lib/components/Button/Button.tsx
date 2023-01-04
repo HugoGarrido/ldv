@@ -26,15 +26,15 @@ function getCurrentPropertyValue(
   const { isDisabled, isHovered, isFocused, isPressed } = state;
 
   if (isDisabled) {
-    return `voodoo.button.${color}.disabled.${property}`;
-  }
-
-  if (isHovered) {
-    return `${buttonThemeKey}.hovered.${property}`;
+    return `voodoo.button.disabled.${property}`;
   }
 
   if (isPressed) {
     return `${buttonThemeKey}.pressed.${property}`;
+  }
+
+  if (isHovered) {
+    return `${buttonThemeKey}.hovered.${property}`;
   }
 
   if (isFocused) {
@@ -68,7 +68,7 @@ export function Button({
   disabled,
   ...props
 }: ButtonProps) {
-  const buttonThemeKey = `voodoo.button.${color}.${variant}`;
+  const isOutlined = variant === 'outlined';
 
   return (
     <Pressable
@@ -79,35 +79,51 @@ export function Button({
       {...props}
     >
       {({ isHovered, isPressed, isFocused }) => {
-        const currentColor = getCurrentPropertyValue(variant, color, 'color', {
+        const buttonState = {
           isDisabled: disabled,
           isFocused,
           isHovered,
           isPressed,
-        });
+        };
+
+        const currentColor = getCurrentPropertyValue(
+          variant,
+          color,
+          'color',
+          buttonState
+        );
 
         const currentBorderColor = getCurrentPropertyValue(
           variant,
           color,
           'borderColor',
-          {
-            isDisabled: disabled,
-            isFocused,
-            isHovered,
-            isPressed,
-          }
+          buttonState
+        );
+
+        const currentBackgroundColor = getCurrentPropertyValue(
+          variant,
+          color,
+          'backgroundColor',
+          buttonState
         );
 
         return (
           <View
-            backgroundColor={
-              isHovered || isPressed
-                ? `${buttonThemeKey}.pressed.backgroundColor`
-                : `${buttonThemeKey}.backgroundColor`
-            }
+            backgroundColor={currentBackgroundColor}
             borderRadius="voodoo.button.borderRadius"
-            paddingX="voodoo.button.paddingX"
-            paddingY="voodoo.button.paddingY"
+            paddingX={
+              isOutlined
+                ? 'voodoo.button.outlined.paddingX'
+                : 'voodoo.button.paddingX'
+            }
+            paddingY={
+              isOutlined
+                ? 'voodoo.button.outlined.paddingY'
+                : 'voodoo.button.paddingY'
+            }
+            borderWidth={isOutlined ? 'voodoo.button.borderWidth' : undefined}
+            borderColor={isOutlined ? currentBorderColor : undefined}
+            position="relative"
             _web={{
               style: {
                 // @ts-expect-error valid css property
@@ -119,14 +135,15 @@ export function Button({
                 ],
               },
             }}
-            position="relative"
           >
-            <BorderWhenInteracted
-              variant={variant}
-              isFocused={isFocused}
-              isHovered={isHovered}
-              borderColor={currentBorderColor}
-            />
+            {isOutlined ? null : (
+              <BorderWhenInteracted
+                variant={variant}
+                isFocused={isFocused}
+                isHovered={isHovered}
+                borderColor={currentBorderColor}
+              />
+            )}
 
             <View>
               <TypographyBuilder

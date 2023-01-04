@@ -1,4 +1,5 @@
 import { ButtonColor } from '../../components/Button/Button';
+import { hex2rgba } from '../../utils/hexToRgba/hexToRgba';
 import { colors } from './colors';
 
 interface ButtonVariantTheme {
@@ -85,7 +86,7 @@ const buttonVariants: ButtonVariantsTheme = {
       focused: {
         color: colors.white[900],
         borderColor: colors.primary[300],
-        backgroundColor: 'inherit',
+        backgroundColor: colors.primary[400],
       },
     },
     outlined: {
@@ -102,32 +103,30 @@ const buttonVariants: ButtonVariantsTheme = {
         borderColor: colors.primary[400],
         backgroundColor: 'transparent',
       },
-      // TODO
       focused: {
         color: colors.primary[800],
         borderColor: colors.primary[800],
         backgroundColor: 'inherit',
       },
     },
-    // TODO
     text: {
-      color: colors.primary['900'],
+      color: colors.primary[500],
       borderColor: 'transparent',
-      backgroundColor: colors.primary[500],
+      backgroundColor: 'transparent',
       pressed: {
-        color: colors.white[900],
+        color: colors.primary[800],
         borderColor: 'transparent',
-        backgroundColor: colors.primary[500],
+        backgroundColor: hex2rgba(colors.primary[200], 0.5),
       },
       hovered: {
-        color: colors.white[900],
+        color: colors.primary[800],
         borderColor: 'transparent',
-        backgroundColor: colors.primary[500],
+        backgroundColor: hex2rgba(colors.primary[200], 0.5),
       },
       focused: {
-        color: colors.white[900],
-        borderColor: colors.primary[300],
-        backgroundColor: 'inherit',
+        color: colors.primary[900],
+        borderColor: 'transparent',
+        backgroundColor: hex2rgba(colors.primary[400], 0.5),
       },
     },
   },
@@ -196,11 +195,21 @@ const buttonVariants: ButtonVariantsTheme = {
   },
 };
 
+const paddingX = 12;
+const paddingY = 7;
+const borderWidth = 2;
+
 export const button = {
-  paddingX: 12,
-  paddingY: 7,
-  maxWidth: 300,
   borderRadius: 10,
-  borderWidth: 2,
+  borderWidth,
+  paddingX,
+  paddingY,
+  padding: {
+    outlined: {
+      paddingX: paddingX - borderWidth,
+      paddingY: paddingY - borderWidth,
+    },
+  },
+  maxWidth: 300,
   variant: buttonVariants,
 };

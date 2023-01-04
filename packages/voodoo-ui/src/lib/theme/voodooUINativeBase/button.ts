@@ -34,6 +34,7 @@ export const button = {
     primary: {
       solid: makeButtonColorForNBForVariant('solid', 'primary'),
       outlined: makeButtonColorForNBForVariant('outlined', 'primary'),
+      text: makeButtonColorForNBForVariant('text', 'primary'),
     },
   },
   sizes: {
@@ -42,6 +43,7 @@ export const button = {
   space: {
     paddingX: theme.button.paddingX,
     paddingY: theme.button.paddingY,
+    outlined: theme.button.padding.outlined,
   },
   radii: {
     borderRadius: theme.button.borderRadius,
