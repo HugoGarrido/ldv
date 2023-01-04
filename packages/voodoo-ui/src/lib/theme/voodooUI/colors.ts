@@ -1,10 +1,15 @@
-export const colors = {
-  body: '#221240',
-  primary: '#a288e3',
-  accent: '#f7fff7',
-};
+import { palette, VoodooUIPalette } from './palette';
 
-export const typographyColors = {
-  ...colors,
-  body: '#221240',
+type VoodooUIColors = 'body' | 'primary' | 'accent' | 'black' | 'white';
+// TODO: implement when needed
+// | 'success'
+// | 'error'
+// | 'warning';
+
+export const colors: Record<VoodooUIColors, VoodooUIPalette> = {
+  body: palette.shark,
+  primary: palette.electricViolet,
+  accent: palette.ultramarine,
+  black: palette.shark,
+  white: palette.white,
 };

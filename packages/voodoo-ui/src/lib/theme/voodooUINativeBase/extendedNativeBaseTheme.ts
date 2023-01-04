@@ -32,14 +32,19 @@ export const extendedNativeBaseTheme = extendTheme({
     ...resetNativeBaseBreakpoints,
     ...theme.breakpoints,
   },
+  borderWidths: {
+    ...resetNativeBaseSpaces,
+    ...spaces,
+  },
   colors: {
     voodoo: {
       colors: {
         ...theme.colors,
+        palettes: { voodooUI: theme.palette },
       },
       typography: {
         colors: {
-          ...theme.typographyColors,
+          ...theme.typography.colors,
         },
       },
     },

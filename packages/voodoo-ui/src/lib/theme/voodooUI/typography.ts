@@ -1,4 +1,14 @@
+import { TypographyColor } from './../../components/Typography/types';
 import { VoodooUIResponsiveRecordValue } from '../../utils/createResponsiveStyleFromProp/createResponsiveStyleFromProp';
+import { colors } from './colors';
+
+const typographyColor: Record<TypographyColor, string> = {
+  body: colors.body[900],
+  primary: colors.primary[900],
+  black: colors.black[900],
+  white: colors.white[900],
+  accent: colors.accent[900],
+};
 
 function makeTypographyConfig<T>(
   valueBase: T,
@@ -65,4 +75,5 @@ export const typography = {
       lineHeight: '22px',
     },
   },
+  colors: typographyColor,
 };

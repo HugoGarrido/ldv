@@ -1,4 +1,4 @@
-export type TypographyColor = 'body' | 'primary';
+export type TypographyColor = 'body' | 'primary' | 'white' | 'black' | 'accent';
 
 export type TypographyVariant =
   | 'body-small'
