@@ -36,6 +36,21 @@ export const button = {
       outlined: makeButtonColorForNBForVariant('outlined', 'primary'),
       text: makeButtonColorForNBForVariant('text', 'primary'),
     },
+    default: {
+      solid: makeButtonColorForNBForVariant('solid', 'default'),
+      outlined: makeButtonColorForNBForVariant('outlined', 'default'),
+      text: makeButtonColorForNBForVariant('text', 'default'),
+    },
+    white: {
+      solid: makeButtonColorForNBForVariant('solid', 'white'),
+      outlined: makeButtonColorForNBForVariant('outlined', 'white'),
+      text: makeButtonColorForNBForVariant('text', 'white'),
+    },
+    black: {
+      solid: makeButtonColorForNBForVariant('solid', 'black'),
+      outlined: makeButtonColorForNBForVariant('outlined', 'black'),
+      text: makeButtonColorForNBForVariant('text', 'black'),
+    },
   },
   sizes: {
     maxWidth: theme.button.maxWidth,

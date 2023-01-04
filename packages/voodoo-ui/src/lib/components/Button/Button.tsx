@@ -6,7 +6,7 @@ import { TypographyBuilder } from '../Typography/Typography';
 import { BorderWhenInteracted } from './BorderWhenInteracted';
 
 export type ButtonVariant = 'solid' | 'outlined' | 'text';
-export type ButtonColor = 'default' | 'primary';
+export type ButtonColor = 'default' | 'primary' | 'white' | 'black';
 
 interface ButtonState {
   isDisabled?: boolean;
