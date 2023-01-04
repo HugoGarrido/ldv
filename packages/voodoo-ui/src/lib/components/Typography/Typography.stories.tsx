@@ -60,7 +60,7 @@ function StoryContent(): ReactElement {
 }
 
 export default {
-  title: 'voodoo-ui/components/Typography',
+  title: 'voodoo-ui/Components',
   component: Typography.Text,
 } as ComponentMeta<typeof Typography.Text>;
 
