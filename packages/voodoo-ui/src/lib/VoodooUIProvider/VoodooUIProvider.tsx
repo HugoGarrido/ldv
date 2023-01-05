@@ -1,4 +1,5 @@
 import { NativeBaseProvider, NativeBaseProviderProps } from 'native-base';
+import { extendedNativeBaseTheme } from '../theme/voodooUINativeBase/extendedNativeBaseTheme';
 
 export interface VoodooUIProviderProps extends NativeBaseProviderProps {}
 
@@ -7,5 +8,9 @@ export function VoodooUIProvider({
   children,
   ...props
 }: VoodooUIProviderProps) {
-  return <NativeBaseProvider isSSR={isSSR}>{children}</NativeBaseProvider>;
+  return (
+    <NativeBaseProvider isSSR={isSSR} theme={extendedNativeBaseTheme}>
+      {children}
+    </NativeBaseProvider>
+  );
 }
