@@ -1,4 +1,5 @@
-import { ITextProps, Text } from 'native-base';
+import type { ITextProps } from 'native-base';
+import { Text } from 'native-base';
 import { FC, ReactElement, ReactNode } from 'react';
 import { ViewProps } from '../../native-base/primitives/NBView';
 import { VoodooUIResponsiveValue } from '../../utils/createResponsiveStyleFromProp/createResponsiveStyleFromProp';
@@ -20,7 +21,7 @@ interface AuthorizedNativeBaseTextProps
     | 'position'
   > {}
 
-interface TypographyBuilderProps extends AuthorizedNativeBaseTextProps {
+export interface TypographyBuilderProps extends AuthorizedNativeBaseTextProps {
   children: ReactNode;
   color?: ITextProps['color'];
   lineHeight?: ITextProps['lineHeight'];
@@ -29,6 +30,9 @@ interface TypographyBuilderProps extends AuthorizedNativeBaseTextProps {
   variant?: VoodooUIResponsiveValue<TypographyVariant>;
   accessibilityRole?: ViewProps['accessibilityRole'];
   accessibilityLevel?: number;
+  underline?: ITextProps['underline'];
+  href?: string;
+  onPress?: () => void;
 }
 
 export function TypographyBuilder({
@@ -52,7 +56,8 @@ export function TypographyBuilder({
   );
 }
 
-interface TypographyProps extends TypographyBuilderProps {
+export interface TypographyProps
+  extends Exclude<TypographyBuilderProps, 'href' | 'onPress'> {
   color?: VoodooUIResponsiveValue<TypographyColor>;
   variant?: VoodooUIResponsiveValue<TypographyVariant>;
 }

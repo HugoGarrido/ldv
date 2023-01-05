@@ -47,6 +47,9 @@ export const extendedNativeBaseTheme = extendTheme({
         palettes: { voodooUI: theme.palette },
       },
       button: button.colors,
+      link: {
+        colors: theme.link.colors,
+      },
       typography: {
         colors: {
           ...theme.typography.colors,

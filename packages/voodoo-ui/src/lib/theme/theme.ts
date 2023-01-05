@@ -2,14 +2,16 @@ import { breakpoints } from './voodooUI/breakpoints';
 import { button } from './voodooUI/button';
 import { colors } from './voodooUI/colors';
 import { space } from './voodooUI/spaces';
-import { typography } from './voodooUI/typography';
+import { link } from './voodooUI/link';
 import { palette } from './voodooUI/palette';
+import { typography } from './voodooUI/typography';
 
 export const theme = {
   breakpoints,
   button,
   colors,
   space,
-  typography,
+  link,
   palette,
+  typography,
 };
