@@ -2,7 +2,7 @@ import { ButtonColor } from '../../components/Button/Button';
 import { hex2rgba } from '../../utils/hexToRgba/hexToRgba';
 import { colors } from './colors';
 
-interface ButtonVariantTheme {
+export interface ButtonVariantTheme {
   solid: {
     color: string;
     borderColor: string;
@@ -296,7 +296,7 @@ const buttonVariants: ButtonVariantsTheme = {
       },
     },
     text: {
-      color: colors.black[500],
+      color: colors.black[900],
       borderColor: 'transparent',
       backgroundColor: 'transparent',
       pressed: {
@@ -318,6 +318,70 @@ const buttonVariants: ButtonVariantsTheme = {
   },
 };
 
+// TODO
+const buttonDisabled: ButtonVariantTheme = {
+  solid: {
+    color: colors.white[900],
+    borderColor: 'transparent',
+    backgroundColor: colors.black[900],
+    pressed: {
+      color: colors.white[900],
+      borderColor: colors.black[300],
+      backgroundColor: colors.black[800],
+    },
+    hovered: {
+      color: colors.white[900],
+      borderColor: colors.black[300],
+      backgroundColor: colors.black[800],
+    },
+    focused: {
+      color: colors.white[900],
+      borderColor: colors.black[300],
+      backgroundColor: colors.black[700],
+    },
+  },
+  outlined: {
+    color: colors.black[900],
+    borderColor: colors.black[900],
+    backgroundColor: 'transparent',
+    pressed: {
+      color: colors.black[600],
+      borderColor: colors.black[600],
+      backgroundColor: 'transparent',
+    },
+    hovered: {
+      color: colors.black[600],
+      borderColor: colors.black[600],
+      backgroundColor: 'transparent',
+    },
+    focused: {
+      color: colors.black[800],
+      borderColor: colors.black[800],
+      backgroundColor: 'inherit',
+    },
+  },
+  text: {
+    color: colors.black[500],
+    borderColor: 'transparent',
+    backgroundColor: 'transparent',
+    pressed: {
+      color: colors.black[800],
+      borderColor: 'transparent',
+      backgroundColor: hex2rgba(colors.black[200], 0.5),
+    },
+    hovered: {
+      color: colors.black[800],
+      borderColor: 'transparent',
+      backgroundColor: hex2rgba(colors.black[200], 0.5),
+    },
+    focused: {
+      color: colors.black[900],
+      borderColor: 'transparent',
+      backgroundColor: hex2rgba(colors.black[400], 0.5),
+    },
+  },
+};
+
 const paddingX = 12;
 const paddingY = 7;
 const borderWidth = 2;
@@ -335,4 +399,5 @@ export const button = {
   },
   maxWidth: 300,
   variant: buttonVariants,
+  disabled: buttonDisabled,
 };

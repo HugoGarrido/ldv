@@ -1,32 +1,42 @@
 import { ButtonColor, ButtonVariant } from '../../components/Button/Button';
 import { theme } from '../theme';
+import { ButtonVariantTheme } from '../voodooUI/button';
+
+function makeButtonColorForNB(
+  config:
+    | ButtonVariantTheme['outlined']
+    | ButtonVariantTheme['solid']
+    | ButtonVariantTheme['text']
+) {
+  return {
+    color: config.color,
+    borderColor: config.borderColor,
+    backgroundColor: config.backgroundColor,
+    pressed: {
+      color: config.pressed.color,
+      borderColor: config.pressed.borderColor,
+      backgroundColor: config.pressed.backgroundColor,
+    },
+    hovered: {
+      color: config.hovered.color,
+      borderColor: config.hovered.borderColor,
+      backgroundColor: config.hovered.backgroundColor,
+    },
+    focused: {
+      color: config.focused.color,
+      borderColor: config.focused.borderColor,
+      backgroundColor: config.focused.backgroundColor,
+    },
+  };
+}
 
 function makeButtonColorForNBForVariant(
   variant: ButtonVariant,
   color: ButtonColor
 ) {
-  const baseKey = theme.button.variant[color][variant];
+  const config = theme.button.variant[color][variant];
 
-  return {
-    color: baseKey.color,
-    borderColor: baseKey.borderColor,
-    backgroundColor: baseKey.backgroundColor,
-    pressed: {
-      color: baseKey.pressed.color,
-      borderColor: baseKey.pressed.borderColor,
-      backgroundColor: baseKey.pressed.backgroundColor,
-    },
-    hovered: {
-      color: baseKey.hovered.color,
-      borderColor: baseKey.hovered.borderColor,
-      backgroundColor: baseKey.hovered.backgroundColor,
-    },
-    focused: {
-      color: baseKey.focused.color,
-      borderColor: baseKey.focused.borderColor,
-      backgroundColor: baseKey.focused.backgroundColor,
-    },
-  };
+  return makeButtonColorForNB(config);
 }
 
 export const button = {
@@ -50,6 +60,11 @@ export const button = {
       solid: makeButtonColorForNBForVariant('solid', 'black'),
       outlined: makeButtonColorForNBForVariant('outlined', 'black'),
       text: makeButtonColorForNBForVariant('text', 'black'),
+    },
+    disabled: {
+      solid: makeButtonColorForNB(theme.button.disabled.solid),
+      outlined: makeButtonColorForNB(theme.button.disabled.outlined),
+      text: makeButtonColorForNB(theme.button.disabled.text),
     },
   },
   sizes: {
