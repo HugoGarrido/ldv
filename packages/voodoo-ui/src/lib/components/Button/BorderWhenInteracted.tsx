@@ -23,7 +23,6 @@ export function BorderWhenInteracted({
     <View
       opacity={shouldDisplayBorder ? 1 : 0}
       borderWidth="voodoo.button.borderWidth"
-      // borderColor={`voodoo.button.${color}.${variant}.focused.borderColor`}
       borderColor={borderColor}
       position="absolute"
       top={`-${theme.button.borderWidth}px`}

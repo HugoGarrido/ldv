@@ -3,9 +3,7 @@ import { View } from '../../native-base/primitives';
 import { HStack } from '../../native-base/layout';
 import { Button, ButtonColor, ButtonVariant } from './Button';
 
-// const buttonColors: ButtonColor[] = ['primary'];
 const buttonColors: ButtonColor[] = ['primary', 'default', 'white', 'black'];
-// const buttonVariants: ButtonVariant[] = ['solid'];
 const buttonVariants: ButtonVariant[] = ['solid', 'outlined', 'text'];
 
 export default {
