@@ -8,7 +8,7 @@ import { TypographyBuilder } from '../Typography/Typography';
 import { getColorToColoProps } from '../Typography/utils/getColorToColorProps';
 import { getStateColorToColorProps } from './utils/getStateColorToColorProps';
 
-interface LinkProps
+export interface LinkProps
   extends Exclude<
     TypographyBuilderProps,
     'lineHeight' | 'fontFamily' | 'fontSize' | 'accessibilityRole'
