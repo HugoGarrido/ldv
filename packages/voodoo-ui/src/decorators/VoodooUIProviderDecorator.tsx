@@ -1,4 +1,4 @@
-import { VoodooUIProvider } from '../lib/VoodooUIProvider/VoodooUIProvider';
+import { VoodooUIProvider } from '../lib/components/VoodooUIProvider/VoodooUIProvider';
 import { ReactNode } from 'react';
 import { makeDecorator } from '@storybook/addons';
 
