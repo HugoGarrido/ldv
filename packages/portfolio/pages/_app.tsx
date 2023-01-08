@@ -1,4 +1,4 @@
-import { VoodooUIProvider, Button } from '@ldv/voodoo-ui';
+import { VoodooUIProvider } from '@ldv/voodoo-ui';
 import { AppProps } from 'next/app';
 import { AppHead } from '../components/pages/AppHead/AppHead';
 import './styles.css';

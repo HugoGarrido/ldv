@@ -35,6 +35,26 @@
         }
       }
     },
+    "build": {
+      "executor": "@nrwl/rollup:rollup",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/voodoo-ui",
+        "tsConfig": "packages/voodoo-ui/tsconfig.lib.json",
+        "project": "packages/voodoo-ui/package.json",
+        "entryFile": "packages/voodoo-ui/src/index.ts",
+        "external": ["react/jsx-runtime"],
+        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "compiler": "babel",
+        "assets": [
+          {
+            "glob": "packages/voodoo-ui/README.md",
+            "input": ".",
+            "output": "."
+          }
+        ]
+      }
+    },
     "build-storybook": {
       "executor": "@nrwl/storybook:build",
       "outputs": ["{options.outputPath}"],

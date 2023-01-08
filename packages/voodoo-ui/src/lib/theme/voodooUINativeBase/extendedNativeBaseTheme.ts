@@ -2,6 +2,7 @@ import { extendTheme } from 'native-base';
 import { theme } from '../theme';
 import { button } from './button';
 import { spaces } from './spaces';
+import { typography } from './typography';
 
 // reset native-base to be able to set size / space as a number
 // https://docs.nativebase.io/next/default-theme#h2-size
@@ -62,6 +63,13 @@ export const extendedNativeBaseTheme = extendTheme({
   },
   fontConfig: {
     ...theme.typography.fontConfig,
+  },
+  fontSizes: {
+    voodoo: {
+      typography: {
+        ...typography.fontSizes,
+      },
+    },
   },
   radii: {
     ...resetNativeBaseRadii,
