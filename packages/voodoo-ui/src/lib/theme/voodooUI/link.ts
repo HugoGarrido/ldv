@@ -1,7 +1,7 @@
 import { TypographyColor } from './../../components/Typography/types';
 import { colors } from './colors';
 
-interface LinkColor {
+export interface LinkColor {
   hovered: {
     color: string;
   };

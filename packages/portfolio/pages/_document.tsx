@@ -9,6 +9,7 @@ import Document, {
 import { ServerStyleSheet } from 'styled-components';
 import { AppRegistry } from 'react-native';
 import { Children } from 'react';
+import { getStyleElement as getResponsiveQueryStyleElement } from 'native-base';
 
 export default class CustomDocument extends Document {
   static async getInitialProps(
@@ -30,9 +31,15 @@ export default class CustomDocument extends Document {
     const intialProps = await Document.getInitialProps(ctx);
     const styles = sheet.getStyleElement();
 
+    const nativeStyles = getStyleElement();
+
     return {
       ...intialProps,
-      styles: Children.toArray([styles, getStyleElement()]),
+      styles: Children.toArray([
+        styles,
+        nativeStyles,
+        getResponsiveQueryStyleElement(),
+      ]),
     };
   }
 

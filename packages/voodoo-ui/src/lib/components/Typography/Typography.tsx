@@ -68,19 +68,10 @@ function TypographyText({
   children,
   ...props
 }: TypographyProps) {
-  const currentFontFamily = getVariantToFontFamilyProps(variant);
   const currentColor = getColorToColoProps(color);
-  const currentFontSize = getVariantToFontFamilySizeProps(variant);
-  const currentLineHeight = getVariantToFontLineHeightProps(variant);
 
   return (
-    <TypographyBuilder
-      {...props}
-      fontFamily={currentFontFamily}
-      color={currentColor}
-      fontSize={currentFontSize}
-      lineHeight={currentLineHeight}
-    >
+    <TypographyBuilder {...props} variant={variant} color={currentColor}>
       {children}
     </TypographyBuilder>
   );
