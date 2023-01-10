@@ -1,23 +1,19 @@
-import { ReactElement, ReactNode, Suspense } from 'react';
-import { TamaguiProvider, Button } from 'tamagui';
-import config from '../../../tamagui.config';
+import { ReactElement, ReactNode } from 'react';
+import { TamaguiProvider, TamaguiProviderProps } from 'tamagui';
+import { config } from '../../../tamagui.config';
 
-interface VoodooUITamaguiProviderProps {
+interface VoodooUITamaguiProviderProps
+  extends Omit<TamaguiProviderProps, 'config'> {
   children: ReactNode;
 }
 
 export function VoodooUITamaguiProvider({
   children,
+  ...props
 }: VoodooUITamaguiProviderProps): ReactElement {
   return (
-    <TamaguiProvider config={config}>
-      {/* if you want nice React 18 concurrent hydration, you'll want Suspense near the root */}
-      <Suspense>
-        <>
-          {children}
-          <Button onPress={() => console.log('tamagui')}>tamagui</Button>
-        </>
-      </Suspense>
+    <TamaguiProvider {...props} config={config}>
+      {children}
     </TamaguiProvider>
   );
 }

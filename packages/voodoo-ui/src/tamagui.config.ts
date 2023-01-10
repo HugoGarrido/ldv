@@ -1,9 +1,8 @@
 import { shorthands } from '@tamagui/shorthands';
-
 import { themes, tokens } from '@tamagui/theme-base';
-
 import { createFont, createTamagui } from 'tamagui';
-export default createTamagui({
+
+export const config = createTamagui({
   themes,
   tokens,
   shorthands,
@@ -29,3 +28,5 @@ export default createTamagui({
     }),
   },
 });
+
+export default config;

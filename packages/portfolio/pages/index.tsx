@@ -1,5 +1,5 @@
+import { TamaButton } from '@ldv/voodoo-ui';
 import styled from 'styled-components';
-import { VoodooUi } from '@ldv/voodoo-ui';
 
 const StyledPage = styled.div`
   .page {
@@ -14,7 +14,6 @@ export function Index() {
    */
   return (
     <StyledPage>
-      <VoodooUi isSSR />
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
@@ -23,7 +22,7 @@ export function Index() {
               Welcome to LDV portfolio 👋
             </h1>
           </div>
-
+          <TamaButton onPress={() => alert('nique tout')}>OSECOUR</TamaButton>
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>

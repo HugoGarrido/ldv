@@ -1,39 +1,33 @@
-import Document, {
-  Html,
-  Head,
-  Main,
-  NextScript,
+import NextDocument, {
   DocumentContext,
   DocumentInitialProps,
+  Head,
+  Html,
+  Main,
+  NextScript,
 } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
-import { AppRegistry } from 'react-native';
 import { Children } from 'react';
+import { AppRegistry } from 'react-native';
+import Tamagui from '../tamagui.config';
 
-export default class CustomDocument extends Document {
+export default class Document extends NextDocument {
   static async getInitialProps(
     ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
-    AppRegistry.registerComponent('App', () => Main);
-    const { getStyleElement } = AppRegistry.getApplication('App');
+    const { renderPage } = ctx;
+    AppRegistry.registerComponent('Main', () => Main);
+    const page = await renderPage();
 
-    const originalRenderPage = ctx.renderPage;
-
-    const sheet = new ServerStyleSheet();
-
-    ctx.renderPage = () =>
-      originalRenderPage({
-        enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
-        enhanceComponent: (Component) => Component,
-      });
-
-    const intialProps = await Document.getInitialProps(ctx);
-    const styles = sheet.getStyleElement();
-
-    return {
-      ...intialProps,
-      styles: Children.toArray([styles, getStyleElement()]),
-    };
+    // @ts-expect-error should use react-native-web typing
+    const { getStyleElement } = AppRegistry.getApplication('Main');
+    const styles = [
+      getStyleElement(),
+      <style
+        key="tamagui-css"
+        dangerouslySetInnerHTML={{ __html: Tamagui.getCSS() }}
+      />,
+    ];
+    return { ...page, styles: Children.toArray(styles) };
   }
 
   render() {
