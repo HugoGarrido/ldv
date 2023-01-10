@@ -1,5 +1,5 @@
 import { rootMain } from '../../../.storybook/main';
-
+import webpack from 'webpack';
 import type { StorybookConfig, Options } from '@storybook/core-common';
 
 const config: StorybookConfig = {
@@ -19,6 +19,21 @@ const config: StorybookConfig = {
     // apply any global webpack configs that might have been specified in .storybook/main.ts
     if (rootMain.webpackFinal) {
       config = await rootMain.webpackFinal(config, { configType } as Options);
+    }
+
+    if (config.plugins) {
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          'process.env.TAMAGUI_TARGET': JSON.stringify('web'),
+        })
+      );
+    } else {
+      config.plugins = [];
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          'process.env.TAMAGUI_TARGET': JSON.stringify('web'),
+        })
+      );
     }
 
     // add your own webpack tweaks if needed

@@ -1,6 +1,7 @@
 import { VoodooUIProvider } from '../lib/components/VoodooUIProvider/VoodooUIProvider';
 import { ReactNode } from 'react';
 import { makeDecorator } from '@storybook/addons';
+import { VoodooUITamaguiProvider } from '../lib/components/VoodooUITamaguiProvider/VoodooUITamaguiProvider';
 
 interface VoodooUIProviderComponentDecoratorProps {
   children: ReactNode;
@@ -20,7 +21,9 @@ export const VoodooUIProviderDecorator = makeDecorator({
   wrapper: (storyFn, context, { options = {}, parameters = {} }) => {
     return (
       <VoodooUIProvider isSSR={parameters.isSSR ?? (options as any).isSSR}>
-        {storyFn(context) as ReactNode}
+        <VoodooUITamaguiProvider>
+          {storyFn(context) as ReactNode}
+        </VoodooUITamaguiProvider>
       </VoodooUIProvider>
     );
   },
