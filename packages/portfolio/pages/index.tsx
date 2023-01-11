@@ -1,19 +1,8 @@
-import { TamaButton } from '@ldv/voodoo-ui';
-import styled from 'styled-components';
-
-const StyledPage = styled.div`
-  .page {
-  }
-`;
+import { PageContainer } from '../shared/components/PageContainer/PageContainer';
 
 export function Index() {
-  /*
-   * Replace the elements below with your own.
-   *
-   * Note: The corresponding styles are in the ./index.styled-components file.
-   */
   return (
-    <StyledPage>
+    <PageContainer>
       <div className="wrapper">
         <div className="container">
           <div id="welcome">
@@ -22,7 +11,6 @@ export function Index() {
               Welcome to LDV portfolio 👋
             </h1>
           </div>
-          <TamaButton onPress={() => alert('nique tout')}>OSECOUR</TamaButton>
           <div id="hero" className="rounded">
             <div className="text-container">
               <h2>
@@ -414,7 +402,7 @@ export function Index() {
           </p>
         </div>
       </div>
-    </StyledPage>
+    </PageContainer>
   );
 }
 

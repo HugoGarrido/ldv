@@ -8,26 +8,42 @@ import NextDocument, {
 } from 'next/document';
 import { Children } from 'react';
 import { AppRegistry } from 'react-native';
+import { ServerStyleSheet } from 'styled-components';
 import Tamagui from '../tamagui.config';
 
 export default class Document extends NextDocument {
   static async getInitialProps(
     ctx: DocumentContext
   ): Promise<DocumentInitialProps> {
-    const { renderPage } = ctx;
-    AppRegistry.registerComponent('Main', () => Main);
-    const page = await renderPage();
+    // Styled Components
+    const styledComponentsSheet = new ServerStyleSheet();
 
-    // @ts-expect-error should use react-native-web typing
-    const { getStyleElement } = AppRegistry.getApplication('Main');
-    const styles = [
-      getStyleElement(),
-      <style
-        key="tamagui-css"
-        dangerouslySetInnerHTML={{ __html: Tamagui.getCSS() }}
-      />,
-    ];
-    return { ...page, styles: Children.toArray(styles) };
+    const { renderPage } = ctx;
+
+    // React Native / Tamagui
+    AppRegistry.registerComponent('Main', () => Main);
+
+    try {
+      const page = await renderPage({
+        enhanceApp: (App) => (props) =>
+          styledComponentsSheet.collectStyles(<App {...props} />),
+      });
+
+      // @ts-expect-error should use react-native-web typing
+      const { getStyleElement } = AppRegistry.getApplication('Main');
+
+      const styles = [
+        styledComponentsSheet.getStyleElement(),
+        getStyleElement(),
+        <style
+          key="tamagui-css"
+          dangerouslySetInnerHTML={{ __html: Tamagui.getCSS() }}
+        />,
+      ];
+      return { ...page, styles: Children.toArray(styles) };
+    } finally {
+      styledComponentsSheet.seal();
+    }
   }
 
   render() {
