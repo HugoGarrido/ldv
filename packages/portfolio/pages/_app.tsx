@@ -2,6 +2,17 @@ import { VoodooUITamaguiProvider } from '@ldv/voodoo-ui';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
+import { Inter, Sora } from '@next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--voodoo-ui-body-font',
+});
+
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--voodoo-ui-heading-font',
+});
 
 import {
   NextThemeProvider as TamaguiNextThemeProvider,
@@ -23,7 +34,10 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </Head>
       <TamaguiNextThemeProvider onChangeTheme={setTheme}>
         <VoodooUITamaguiProvider disableInjectCSS defaultTheme={theme}>
-          <main className="app" style={{ minHeight: '100vh', display: 'flex' }}>
+          <main
+            className={`${inter.variable} ${sora.variable}`}
+            style={{ minHeight: '100vh', display: 'flex' }}
+          >
             {contents}
           </main>
         </VoodooUITamaguiProvider>
