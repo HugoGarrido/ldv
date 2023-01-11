@@ -16,5 +16,5 @@ export type {
 } from './lib/utils/createResponsiveStyleFromProp/createResponsiveStyleFromProp';
 export { createResponsiveStyleFromProp } from './lib/utils/createResponsiveStyleFromProp/createResponsiveStyleFromProp';
 export { VoodooUITamaguiProvider } from './lib/components/VoodooUITamaguiProvider/VoodooUITamaguiProvider';
-export { TamaguiProvider, Button as TamaButton } from 'tamagui';
+export { TamaguiProvider, Button as TamaButton, Heading } from 'tamagui';
 export { config } from './tamagui.config';

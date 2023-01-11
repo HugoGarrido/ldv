@@ -19,6 +19,7 @@ import {
   useRootTheme,
 } from '@tamagui/next-theme';
 import { useMemo } from 'react';
+import { PortfolioThemeProvider } from '../shared/components/PortfolioThemeProvider/PortfolioThemeProvider';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const [theme, setTheme] = useRootTheme();
@@ -32,16 +33,18 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to portfolio!</title>
       </Head>
-      <TamaguiNextThemeProvider onChangeTheme={setTheme}>
-        <VoodooUITamaguiProvider disableInjectCSS defaultTheme={theme}>
-          <main
-            className={`${inter.variable} ${sora.variable}`}
-            style={{ minHeight: '100vh', display: 'flex' }}
-          >
-            {contents}
-          </main>
-        </VoodooUITamaguiProvider>
-      </TamaguiNextThemeProvider>
+      <PortfolioThemeProvider>
+        <TamaguiNextThemeProvider onChangeTheme={setTheme}>
+          <VoodooUITamaguiProvider disableInjectCSS defaultTheme={theme}>
+            <main
+              className={`${inter.variable} ${sora.variable}`}
+              style={{ minHeight: '100vh', display: 'flex' }}
+            >
+              {contents}
+            </main>
+          </VoodooUITamaguiProvider>
+        </TamaguiNextThemeProvider>
+      </PortfolioThemeProvider>
     </>
   );
 }
