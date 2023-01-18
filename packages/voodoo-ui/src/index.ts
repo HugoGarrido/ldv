@@ -18,3 +18,4 @@ export { createResponsiveStyleFromProp } from './lib/utils/createResponsiveStyle
 export { VoodooUITamaguiProvider } from './lib/components/VoodooUITamaguiProvider/VoodooUITamaguiProvider';
 export { TamaguiProvider, Button as TamaButton, Heading } from 'tamagui';
 export { config } from './tamagui.config';
+export { Typography2 } from './lib/components/Typography/Typography2';

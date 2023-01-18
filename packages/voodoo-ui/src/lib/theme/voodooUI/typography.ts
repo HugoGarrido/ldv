@@ -67,11 +67,11 @@ export const typography = {
       lineHeight: makeTypographyConfig('22px', '22px'),
     },
     body: {
-      fontSize: '16px',
+      fontSize: makeTypographyConfig('16px', '16px'),
       lineHeight: '26px',
     },
     bodySmall: {
-      fontSize: '14px',
+      fontSize: makeTypographyConfig('14px', '14px'),
       lineHeight: '22px',
     },
   },
