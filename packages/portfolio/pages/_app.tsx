@@ -2,14 +2,14 @@ import { VoodooUITamaguiProvider } from '@ldv/voodoo-ui';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
-import { Inter, Sora } from '@next/font/google';
+import { Inter, Hanken_Grotesk } from '@next/font/google';
 
 const inter = Inter({
   subsets: ['latin'],
   variable: '--voodoo-ui-body-font',
 });
 
-const sora = Sora({
+const hantekGrotesk = Hanken_Grotesk({
   subsets: ['latin'],
   variable: '--voodoo-ui-heading-font',
 });
@@ -37,7 +37,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <TamaguiNextThemeProvider onChangeTheme={setTheme}>
           <VoodooUITamaguiProvider disableInjectCSS defaultTheme={theme}>
             <main
-              className={`${inter.variable} ${sora.variable}`}
+              className={`${inter.variable} ${hantekGrotesk.variable}`}
               style={{ minHeight: '100vh', display: 'flex' }}
             >
               {contents}
