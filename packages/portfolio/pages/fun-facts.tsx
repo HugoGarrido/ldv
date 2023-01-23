@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { ReactElement } from 'react';
+import { PageMenu } from '../shared/components/PageMenu/PageMenu';
 
 function FunFacts(): ReactElement {
   return (
     <div>
+      <PageMenu />
       <div>Fun Facts</div>
 
       <div>
