@@ -134,6 +134,7 @@ export function Typography({
   textAlign,
   textTransform,
   textDecorationLine,
+  fontWeight,
   href,
   ...props
 }: TypographyProps) {
@@ -147,6 +148,7 @@ export function Typography({
       textAlign={textAlign}
       textDecorationLine={textDecorationLine}
       textTransform={textTransform}
+      fontWeight={fontWeight}
       $small={getStylePropsForBreakpoint(variant, $small, true)}
       $medium={getStylePropsForBreakpoint(variant, $medium)}
       $large={getStylePropsForBreakpoint(variant, $large)}
@@ -177,7 +179,7 @@ interface TypographyHeadingProps extends TypographyProps {
 }
 
 function TypographyHeading(props: TypographyHeadingProps) {
-  return <Typography {...props} />;
+  return <Typography {...props} fontWeight="600" />;
 }
 
 Typography.Text = TypographyText;

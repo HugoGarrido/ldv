@@ -1,6 +1,7 @@
 export * from './lib/voodoo-ui';
 export type { ButtonProps } from './lib/components/Button/Button';
 export { Button } from './lib/components/Button/Button';
+export { Button as Button2 } from './lib/components/Button/Button2';
 export type { LinkProps } from './lib/components/Link/Link';
 export { Link } from './lib/components/Link/Link';
 export type { TypographyProps } from './lib/components/Typography/Typography';

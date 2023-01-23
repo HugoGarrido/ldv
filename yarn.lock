@@ -5240,6 +5240,14 @@
     "@tamagui/core" "^1.0.3"
     "@tamagui/use-presence" "^1.0.3"
 
+"@tamagui/animations-css@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/@tamagui/animations-css/-/animations-css-1.0.17.tgz#b6412181748b01202301b76b6eff4d4dd7fe0db6"
+  integrity sha512-ezIkyzq9V8k7BAHaudVcodqEWAzjj5Ylrpz/5vhfeCyza3PvBRA5Gg7l6AZItQBg8h/xpWqmbcVx7YMYk9Br9g==
+  dependencies:
+    "@tamagui/core" "^1.0.17"
+    "@tamagui/use-presence" "^1.0.17"
+
 "@tamagui/animations-react-native@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@tamagui/animations-react-native/-/animations-react-native-1.0.3.tgz#fc051e18b270f49aa60083c5646edbd51c0c95ef"
@@ -5900,6 +5908,13 @@
   version "1.0.17"
   resolved "https://registry.yarnpkg.com/@tamagui/use-force-update/-/use-force-update-1.0.17.tgz#f4b8892c9e34a8f2ffeace94965e70847eb08c07"
   integrity sha512-79wce235hln1K1nA3XMd1ALxrmPgt+5S/6goS+NbRZf2Rr53uwfuzRxLXvGgHEbknGpzjip4ovRmV1Z/VKuHVw==
+
+"@tamagui/use-presence@^1.0.17":
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/@tamagui/use-presence/-/use-presence-1.0.17.tgz#f50df6ff436a1edd71b44194e3abd14f2bea61c0"
+  integrity sha512-4BUh2sPCxsr23uifqGKkU/eO/OWkm/bvkSsYs1PA8kuhhy4fwHj+RvFNfrMZNivlz0AUcOvtsGiiLkrXA7JjLw==
+  dependencies:
+    "@tamagui/core" "^1.0.17"
 
 "@tamagui/use-presence@^1.0.3":
   version "1.0.3"

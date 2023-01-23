@@ -2,7 +2,7 @@ import { Pressable } from 'native-base';
 import { ReactNode } from 'react';
 import { View } from '../../native-base/primitives';
 import { PressableProps } from '../../native-base/primitives/NBPressable';
-import { TypographyBuilder } from '../Typography/Typography';
+import { TypographyBuilder } from '../Typography/TypographyNb';
 import { BorderWhenInteracted } from './BorderWhenInteracted';
 
 export type ButtonVariant = 'solid' | 'outlined' | 'text';
