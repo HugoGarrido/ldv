@@ -12,7 +12,7 @@ export function VoodooUITamaguiProvider({
   ...props
 }: VoodooUITamaguiProviderProps): ReactElement {
   return (
-    <TamaguiProvider {...props} config={config}>
+    <TamaguiProvider {...props} defaultTheme="light" config={config}>
       {children}
     </TamaguiProvider>
   );
