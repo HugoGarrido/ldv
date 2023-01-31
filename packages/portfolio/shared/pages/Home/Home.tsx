@@ -1,10 +1,11 @@
 import { Stack, Icon } from '@ldv/voodoo-ui';
-import { HomePageSection } from './components/HomePageSection';
-import { IntroSection } from './components/IntroSection';
-import { DevFrontSection } from './components/DevFrontSection';
-import { DesignSystemSection } from './components/DesignSystemSection';
-import { ProductTeamSection } from './components/ProductTeamSection';
-import { FunFactSection } from './components/FunFactSection';
+import { HomePageSection } from './components/sections/HomePageSection';
+import { IntroSection } from './components/sections/IntroSection';
+import { DevFrontSection } from './components/sections/DevFrontSection';
+import { DesignSystemSection } from './components/sections/DesignSystemSection';
+import { ProductTeamSection } from './components/sections/ProductTeamSection';
+import { FunFactSection } from './components/sections/FunFactSection';
+import { OrnikarSection } from './components/sections/OrnikarSection/OrnikarSection';
 
 export function Home() {
   return (
@@ -13,9 +14,16 @@ export function Home() {
         <HomePageSection>
           <IntroSection />
         </HomePageSection>
+
         <Stack paddingBottom="$voodoo.10">
           <Icon.ArrowDownCircle color="#000" size={40} />
         </Stack>
+      </Stack>
+
+      <Stack height="100vh">
+        <HomePageSection sectionId="ornikar">
+          <OrnikarSection />
+        </HomePageSection>
       </Stack>
 
       <Stack height="100vh" backgroundColor="$accent600">
