@@ -1,33 +1,13 @@
 import { breakpoints } from './lib/theme/voodooUI/breakpoints';
 import { shorthands } from '@tamagui/shorthands';
-import { themes, tokens } from '@tamagui/theme-base';
+import { themes } from '@tamagui/theme-base';
 import { createTamagui } from 'tamagui';
 import { fonts } from './tamaguiConfig/typography';
 import { createAnimations } from '@tamagui/animations-css';
 import { tokens as voodooTokens } from './tamaguiConfig/tokens';
 
 export const config = createTamagui({
-  tokens: {
-    ...tokens,
-    color: {
-      ...tokens.color,
-      ...voodooTokens.color,
-    },
-    space: {
-      ...tokens.space,
-      ...voodooTokens.space,
-    },
-    size: {
-      ...tokens.size,
-      ...voodooTokens.size,
-    },
-  },
-  space: {
-    ...voodooTokens.space,
-  },
-  size: {
-    ...voodooTokens.size,
-  },
+  tokens: voodooTokens,
   shorthands,
   fonts,
   breakpoints,
@@ -49,9 +29,9 @@ export const config = createTamagui({
       },
     },
     dark: {
-      ...themes.light,
+      ...themes.dark,
       color: {
-        ...themes.light.color,
+        ...themes.dark.color,
         ...voodooTokens.color,
         typographyBody: voodooTokens.color.typographyWhite,
       },
