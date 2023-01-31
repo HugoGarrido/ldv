@@ -1,83 +1,79 @@
-import { Stack, Typography, XStack, YStack } from '@ldv/voodoo-ui';
-import { ReactElement, ReactNode } from 'react';
+import { Stack, Typography, XStack, Button2, YStack } from '@ldv/voodoo-ui';
+import { Car } from '@tamagui/lucide-icons';
 import { PageContainer } from '../../../../../components/PageContainer/PageContainer';
-import { VideoPlayer } from './VideoPlayer';
-
-interface CardProps {
-  title: ReactNode;
-  children: ReactNode;
-}
-
-function Card({ title, children }: CardProps): ReactElement {
-  return (
-    <Stack
-      borderRadius="$voodoo.4"
-      borderColor="$black400"
-      borderWidth="2px"
-      padding="$voodoo.4"
-      minHeight="200px"
-    >
-      <Stack marginBottom="8px">
-        <Typography.Heading textAlign="center" variant="heading3">
-          {title}
-        </Typography.Heading>
-      </Stack>
-
-      <Stack>{children}</Stack>
-    </Stack>
-  );
-}
+import { AppInfoCards } from './components/AppInfoCards';
+import { Card } from './components/Card';
+import { PhonePreviewCard } from './components/PhonePreviewCard';
 
 export function OrnikarSection() {
   return (
     <PageContainer.Padding>
       <Stack marginBottom="$voodoo.4">
-        <Typography.Heading variant="heading2">
-          Frontend tools
+        <Typography.Heading textAlign="center" variant="heading2">
+          Tech @Ornikar
         </Typography.Heading>
       </Stack>
 
-      <Stack>
-        <Typography.Text variant="body">
-          I mainly work with React and React Native and its ecosystem TS / Expo
-          / Storybook / Apollo / Micro Service / RTL
+      <Stack marginBottom="$voodoo.16">
+        <Typography.Text textAlign="center" variant="body">
+          I am currently working at Ornikar on universal apps and help our team
+          to build for the web and the native world
         </Typography.Text>
       </Stack>
 
-      <XStack space="$voodoo.10">
-        <Stack
-          maxWidth="358px"
-          width="100%"
-          position="relative"
-          height="732px"
-          borderRadius="58px"
-          overflow="hidden"
-        >
-          <Stack
-            position="absolute"
-            width="374px"
-            height="800px"
-            left="-8px"
-            top="-9px"
-          >
-            <VideoPlayer
-              autoPlay
-              loop
-              width={380}
-              src="/assets/video/ornikar-app.mp4"
-            />
-          </Stack>
+      <XStack
+        space="$voodoo.10"
+        justifyContent="center"
+        width="100%"
+        flexWrap="wrap"
+        // backgroundColor="$accent600"
+      >
+        <Stack maxWidth="358px" width="100%">
+          <PhonePreviewCard />
         </Stack>
 
-        <Stack>
-          <YStack space="$voodoo.4">
-            <Stack>
-              <Card title="Champion de l'AppStore">
-                <Typography.Text textAlign="center" variant="body">
-                  Top 7 App Store Education 🏆 4.7/5
-                </Typography.Text>
-              </Card>
-            </Stack>
+        <Stack
+          display="inline-flex"
+          justifyContent="flex-start"
+          alignItems="flex-start"
+          flexGrow={0}
+          flexWrap="wrap"
+          maxWidth={`calc(100% - 358px - 40px)`}
+        >
+          <YStack
+            space="$voodoo.10"
+            flexGrow={0}
+            maxWidth="100%"
+            flexWrap="wrap"
+          >
+            <AppInfoCards />
+            <Card
+              maxWidth="480px"
+              justifyContent="space-between"
+              paddingBottom="$voodoo.10"
+              height="480px"
+            >
+              <Stack>
+                <Card.Title>@Ornikar</Card.Title>
+                <Card.Body>
+                  <Stack>
+                    <Stack marginBottom="$voodoo.10" marginTop="auto">
+                      <Typography.Text variant="body-small">
+                        Ornikar is the leading online driving school in France
+                        and aims to improve the access to mobility for young
+                        drivers. The Driving Licence exam is the most passed
+                        exam in France and half of the candidate obtain it
+                        thanks to Ornikar.
+                      </Typography.Text>
+                    </Stack>
+                  </Stack>
+                </Card.Body>
+              </Stack>
+
+              <Stack alignItems="center">
+                <Button2 color="black">Go to Ornikar</Button2>
+              </Stack>
+            </Card>
           </YStack>
         </Stack>
       </XStack>

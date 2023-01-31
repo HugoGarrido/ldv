@@ -1,3 +1,4 @@
+import { YStack } from '@ldv/voodoo-ui';
 export * from './lib/voodoo-ui';
 export type { ButtonProps } from './lib/components/Button/Button';
 export { Button } from './lib/components/Button/Button';
@@ -17,6 +18,7 @@ export type {
 } from './lib/utils/createResponsiveStyleFromProp/createResponsiveStyleFromProp';
 export { createResponsiveStyleFromProp } from './lib/utils/createResponsiveStyleFromProp/createResponsiveStyleFromProp';
 export { VoodooUITamaguiProvider } from './lib/components/VoodooUITamaguiProvider/VoodooUITamaguiProvider';
+export type { StackProps } from '@tamagui/core';
 export { Button as TamaButton, Heading, Stack, YStack, XStack } from 'tamagui';
 export * as Icon from '@tamagui/lucide-icons';
 export { config } from './tamagui.config';
