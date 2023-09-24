@@ -2,14 +2,14 @@ import { VoodooUITamaguiProvider } from '@ldv/voodoo-ui';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
-import { Inter, Sora } from '@next/font/google';
+import { Inter } from '@next/font/google';
 
-const inter = Inter({
+const bodyFont = Inter({
   subsets: ['latin'],
   variable: '--voodoo-ui-body-font',
 });
 
-const sora = Sora({
+const titleFont = Inter({
   subsets: ['latin'],
   variable: '--voodoo-ui-heading-font',
 });
@@ -34,10 +34,10 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <title>Welcome to portfolio!</title>
       </Head>
       <PortfolioThemeProvider>
-        <TamaguiNextThemeProvider onChangeTheme={setTheme}>
+        <TamaguiNextThemeProvider defaultTheme="light" onChangeTheme={setTheme}>
           <VoodooUITamaguiProvider disableInjectCSS defaultTheme={theme}>
             <main
-              className={`${inter.variable} ${sora.variable}`}
+              className={`${bodyFont.variable} ${titleFont.variable}`}
               style={{ minHeight: '100vh', display: 'flex' }}
             >
               {contents}
