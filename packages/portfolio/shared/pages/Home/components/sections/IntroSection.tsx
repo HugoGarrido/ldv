@@ -1,4 +1,4 @@
-import { Stack, Typography, Button2 } from '@ldv/voodoo-ui';
+import { Stack, Typography } from '@ldv/voodoo-ui';
 import { PageContainer } from '../../../../components/PageContainer/PageContainer';
 import { Anchor } from '../../../../components/Anchor/Anchor';
 
@@ -18,18 +18,12 @@ export function IntroSection() {
             Hugo Garrido
           </Typography.Heading>
         </Typography.Heading>
-
-        <Stack marginBottom="$voodoo.10">
-          <Button2>Lets do voodoo</Button2>
-        </Stack>
-
-        <Button2 color="black">Lets do voodoo</Button2>
       </Stack>
 
       <Stack marginBottom="$voodoo.4">
         <Typography.Heading variant="heading4">
           A frontend developer from Paris, France currently at{' '}
-          <Anchor isExternal href="https://www.ornikar.com/">
+          <Anchor variant="heading4" isExternal href="https://www.ornikar.com/">
             Ornikar
           </Anchor>{' '}
           !
